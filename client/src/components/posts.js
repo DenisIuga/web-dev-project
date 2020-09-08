@@ -29,8 +29,11 @@ class Posts extends React.Component {
   };
 
   componentDidMount() {
-    fetch("http://localhost:5000/posts")
-      .then(response => response.json())
+    fetch("http://localhost:5000/posts", {
+      method: 'GET',
+      mode: 'cors'
+    })
+      .then((response) => response.json())
       .then(
         (result) => {
           this.setState({

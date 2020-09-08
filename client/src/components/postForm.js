@@ -5,7 +5,7 @@ class PostForm extends React.Component {
     super(props);
     this.state = { 
       title: "",
-      content:""
+      content:"",
     };
 
     this.handleInputChange = this.handleInputChange.bind(this);
@@ -23,7 +23,22 @@ class PostForm extends React.Component {
   };
 
   handleSubmit(event) {
-    console.log(this.state.title + " " + this.state.content); //needs to be implemented to send data to server
+    const data = this.state;
+    fetch("http://localhost:5000/post/create", {
+      method: 'POST',
+      mode: 'cors',
+      redirect: 'follow',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    })
+    .then((response) => {
+      response.json();
+    })
+    .catch((error) => {
+      console.error('Oh, no! Error: ' + error);
+    });
     event.preventDefault();
   };
 
@@ -32,11 +47,26 @@ class PostForm extends React.Component {
       <form onSubmit={this.handleSubmit}>
         <label>
           Title:
-          <input name="title" type="text" value={this.state.value} onChange={this.handleInputChange}/>
+          <input 
+            name="title"
+            type="text"
+            value={this.state.value}
+            onChange={this.handleInputChange}
+            required
+            minLength="5"
+            maxLength="100"
+          />
         </label>
         <label>
           Content:
-          <textarea name="content" value={this.state.value} onChange={this.handleInputChange}/>
+          <textarea 
+            name="content"
+            value={this.state.value}
+            onChange={this.handleInputChange}
+            required
+            minLength="5"
+            maxLength="500"
+          />
         </label>
         <input type="submit" value="Submit"/>
       </form>
