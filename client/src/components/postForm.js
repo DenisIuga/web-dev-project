@@ -27,7 +27,6 @@ class PostForm extends React.Component {
     fetch("http://localhost:5000/post/create", {
       method: 'POST',
       mode: 'cors',
-      redirect: 'follow',
       headers: {
         'Content-Type': 'application/json'
       },
