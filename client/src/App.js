@@ -21,7 +21,6 @@ function App() {
         </nav>
         <Switch>
           <Route path="/create" component={PostForm}/>
-          <Route path="/update" component={UpdateForm}/>
           <Route path="/" component={Posts}/>
         </Switch>
       </div>
