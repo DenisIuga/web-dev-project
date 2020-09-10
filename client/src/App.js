@@ -3,6 +3,7 @@ import {BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
 import './App.css';
 import Posts from './components/posts';
 import PostForm from './components/postForm';
+import UpdateForm from './components/updateForm';
 
 function App() {
   return (
@@ -19,13 +20,10 @@ function App() {
           </ul>
         </nav>
         <Switch>
-        <Route path="/create">
-          <PostForm/>
-        </Route>
-        <Route path="/">
-          <Posts/>
-        </Route>
-      </Switch>
+          <Route path="/create" component={PostForm}/>
+          <Route path="/update" component={UpdateForm}/>
+          <Route path="/" component={Posts}/>
+        </Switch>
       </div>
     </Router>
   );

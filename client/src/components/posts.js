@@ -1,4 +1,50 @@
 import React from 'react';
+import UpdateForm from './updateForm';
+
+class UpdateButton extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      id: "",
+      showForm: false
+    };
+
+    this.handleOnClick = this.handleOnClick.bind(this);
+  }
+
+  render() {
+    if(!this.state.showForm) {
+      return(
+        <div className="Update-button">
+        <input 
+        name="update"
+        value="Update"
+        type="button" 
+        onClick={this.handleOnClick}
+        />
+      </div>
+      );
+    }
+    return(
+      <div className="Update-button">
+        <input 
+        name="update"
+        value="Update"
+        type="button" 
+        onClick={this.handleOnClick}
+        />
+        <UpdateForm id={this.props.id}/>
+      </div>
+    );
+  };
+
+  handleOnClick(event) {
+    this.setState((state) => ({
+      showForm: !state.showForm
+    }));
+    event.preventDefault();
+  };
+};
 
 class DeleteButton extends React.Component {
   constructor(props) {
@@ -36,7 +82,7 @@ class DeleteButton extends React.Component {
     });
     event.preventDefault();
   };
-}
+};
 
 class Post extends React.Component {
   render() {
@@ -55,6 +101,7 @@ class Post extends React.Component {
           {this.props.content}
         </div>
         <DeleteButton id={this.props.id}/>
+        <UpdateButton id={this.props.id}/>
       </div>
     );
   };
