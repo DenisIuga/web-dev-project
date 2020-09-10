@@ -1,9 +1,50 @@
 import React from 'react';
 
+class DeleteButton extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      id: ""
+    };
+
+    this.handleOnClick = this.handleOnClick.bind(this);
+  }
+
+  render() {
+    return(
+      <div className="Delete-button">
+        <input 
+        name="delete"
+        value="Delete"
+        type="button" 
+        onClick={this.handleOnClick}
+        />
+      </div>
+    );
+  };
+
+  handleOnClick(event) {
+    fetch(`http://localhost:5000/post/${this.props.id}/delete`, {
+      method: 'POST',
+      mode: 'cors',
+    })
+    .then((response) => {
+      response.json();
+    })
+    .catch((error) => {
+      console.error('Oh, no! Error: ' + error);
+    });
+    event.preventDefault();
+  };
+}
+
 class Post extends React.Component {
-  render(){
+  render() {
     return(
       <div className="Post">
+        <div className="Post-date">
+          {this.props.id}
+        </div>
         <div className="Post-date">
           {this.props.date}
         </div>
@@ -13,9 +54,10 @@ class Post extends React.Component {
         <div className="Post-content">
           {this.props.content}
         </div>
+        <DeleteButton id={this.props.id}/>
       </div>
     );
-  }
+  };
 };
 
 class Posts extends React.Component {
@@ -50,7 +92,7 @@ class Posts extends React.Component {
       );
   };
 
-  render(){
+  render() {
     const {error, isLoaded, items} = this.state;
     if(error) {
       return <div className="Error">Error: {error.message}</div>;
@@ -61,7 +103,7 @@ class Posts extends React.Component {
         <ul className="Posts-list">
           {items.map(item => (
             <li className="Post-item" key={item._id}>
-              <Post date={item.time} title={item.title} content={item.content}/>
+              <Post id={item._id} date={item.time} title={item.title} content={item.content}/>
             </li>
           ))}
         </ul>
