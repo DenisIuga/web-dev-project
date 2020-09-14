@@ -1,11 +1,12 @@
 import React from 'react';
+import './postForm.css';
 
 class PostForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       title: "",
-      content:"",
+      content: "",
     };
 
     this.handleInputChange = this.handleInputChange.bind(this);
@@ -32,21 +33,21 @@ class PostForm extends React.Component {
       },
       body: JSON.stringify(data)
     })
-    .then((response) => {
-      response.json();
-    })
-    .catch((error) => {
-      console.error('Oh, no! Error: ' + error);
-    });
+      .then((response) => {
+        response.json();
+      })
+      .catch((error) => {
+        console.error('Oh, no! Error: ' + error);
+      });
     event.preventDefault();
   };
 
   render() {
-    return(
-      <form className="Post-form" onSubmit={this.handleSubmit}>
-        <label>
-          Title:
-          <input 
+    return (
+      <div className="form-container">
+        <form className="Post-form" onSubmit={this.handleSubmit}>
+          <label>Title:</label>
+          <input
             name="title"
             type="text"
             value={this.state.value}
@@ -55,10 +56,8 @@ class PostForm extends React.Component {
             minLength="5"
             maxLength="100"
           />
-        </label>
-        <label>
-          Content:
-          <textarea 
+          <label>Content:</label>
+          <textarea
             name="content"
             value={this.state.value}
             onChange={this.handleInputChange}
@@ -66,9 +65,9 @@ class PostForm extends React.Component {
             minLength="5"
             maxLength="500"
           />
-        </label>
-        <input type="submit" value="Submit"/>
-      </form>
+          <input type="submit" value="Submit" />
+        </form>
+      </div>
     );
   };
 };

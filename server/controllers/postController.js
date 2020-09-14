@@ -7,10 +7,11 @@ exports.post_create_get = (req, res, next) => {
 
 //Handle post create on POST
 exports.post_create_post = (req, res, next) => {
+  var date = new Date();
   var post = new Post({
     title: req.body.title,
     content: req.body.content,
-    time: Date.now(),
+    time: date,
   });
 
   post.save(function(err) {
