@@ -75,7 +75,8 @@ ul.Post-buttons {
 
 .update-container {
   background-color: #a8dadc;
-  padding: 10px;
+  padding: 2%;
+  margin: 2%;
   border-radius: 10px;
   border-top-left-radius: 0;
 }
