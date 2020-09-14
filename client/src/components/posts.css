@@ -1,0 +1,81 @@
+* {
+  box-sizing: border-box;
+}
+
+ul {
+  list-style-type: none;
+  width: 100%;
+  padding: 20px;
+}
+
+li.Post-item {
+  padding: 5%;
+  margin: 5%;
+  background-color: #1d3557;
+  color: whitesmoke;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+li.Post-details {
+  display: flex;
+  padding: 5px;
+}
+
+.Post-title {
+  font-weight: bold;
+  font-size: 28px;
+  text-align: left;
+}
+
+.Post-date {
+  font-size: 12px;
+}
+
+.Post-content {
+  font-size: 18px;
+  text-align: left;
+}
+
+ul.Post-buttons {
+  display: flex;
+  flex-direction: row;
+}
+
+.Delete-button {
+  background-color: #e63946;
+  border: none;
+  color: whitesmoke;
+  font-size: 16px;
+  padding: 5px 10px;
+  text-decoration: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.Delete-button:hover {
+  background-color: whitesmoke;
+  color: #e63946;
+}
+
+.Update-button {
+  background-color: #a8dadc;
+  color: #1d3557;
+  border: none;
+  font-size: 16px;
+  padding: 5px 10px;
+  text-decoration: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.Update-button:hover {
+  background-color: whitesmoke;
+}
+
+.update-container {
+  background-color: #a8dadc;
+  padding: 10px;
+  border-radius: 10px;
+  border-top-left-radius: 0;
+}

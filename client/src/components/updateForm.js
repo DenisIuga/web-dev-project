@@ -1,12 +1,12 @@
 import React from 'react';
-import './postForm.css';
 
-class PostForm extends React.Component {
+class UpdateForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      id: "",
       title: "",
-      content: "",
+      content: ""
     };
 
     this.handleInputChange = this.handleInputChange.bind(this);
@@ -25,7 +25,7 @@ class PostForm extends React.Component {
 
   handleSubmit(event) {
     const data = this.state;
-    fetch("http://localhost:5000/post/create", {
+    fetch(`http://localhost:5000/post/${this.props.id}/update`, {
       method: 'POST',
       mode: 'cors',
       headers: {
@@ -45,8 +45,8 @@ class PostForm extends React.Component {
   render() {
     return (
       <div className="form-container">
-        <form className="Post-form" onSubmit={this.handleSubmit}>
-          <label>Title:</label>
+        <form className="Update-form" onSubmit={this.handleSubmit}>
+          <label>New Title:</label>
           <input
             name="title"
             type="text"
@@ -56,7 +56,7 @@ class PostForm extends React.Component {
             minLength="5"
             maxLength="100"
           />
-          <label>Content:</label>
+          <label>New Content:</label>
           <textarea
             name="content"
             value={this.state.value}
@@ -70,6 +70,6 @@ class PostForm extends React.Component {
       </div>
     );
   };
-};
+}
 
-export default PostForm;
+export default UpdateForm;

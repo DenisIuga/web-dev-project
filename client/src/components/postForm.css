@@ -1,0 +1,38 @@
+.form-container {
+  background-color: #1d3557;
+  margin: 5%;
+  padding: 5%;
+  border-radius: 10px;
+}
+
+input[type=text], textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 10px;
+  display: inline-block;
+  border-radius: 4px;
+  resize: vertical;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  background-color: #a8dadc;
+  color: #1d3557;
+  border: none;
+  font-size: 16px;
+  padding: 5px 10px;
+  margin: 10px;
+  text-decoration: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: whitesmoke;
+}
+
+label {
+  font-size: 18px;
+  color: whitesmoke;
+  float: inline-start;
+}
