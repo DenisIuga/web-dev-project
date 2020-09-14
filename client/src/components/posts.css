@@ -75,7 +75,22 @@ ul.Post-buttons {
 
 .update-container {
   background-color: #a8dadc;
-  padding: 10px;
+  padding: 2%;
+  margin: 2%;
   border-radius: 10px;
   border-top-left-radius: 0;
+}
+
+.Loading-message {
+  padding: 25%;
+  font-size: 28px;
+  font-weight: bold;
+  color: #1d3557;
+}
+
+.Error {
+  padding: 25%;
+  font-size: 28px;
+  font-weight: bold;
+  color: #e63946;
 }

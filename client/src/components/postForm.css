@@ -3,6 +3,7 @@
   margin: 5%;
   padding: 5%;
   border-radius: 10px;
+  overflow: hidden;
 }
 
 input[type=text], textarea {
