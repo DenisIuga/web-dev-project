@@ -3,7 +3,7 @@ import './postForm.css';
 
 class PostForm extends React.Component {
   constructor(props) {
-    super(props);
+    super();
     this.state = {
       title: "",
       content: "",

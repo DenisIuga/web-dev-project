@@ -4,7 +4,7 @@ import './posts.css';
 
 class UpdateButton extends React.Component {
   constructor(props) {
-    super(props);
+    super();
     this.state = {
       id: "",
       showForm: false
@@ -51,7 +51,7 @@ class UpdateButton extends React.Component {
 
 class DeleteButton extends React.Component {
   constructor(props) {
-    super(props);
+    super();
     this.state = {
       id: ""
     };
@@ -130,7 +130,7 @@ class Post extends React.Component {
 
 class Posts extends React.Component {
   constructor(props) {
-    super(props);
+    super();
     this.state = {
       error: null,
       isLoaded: false,
