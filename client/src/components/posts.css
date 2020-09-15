@@ -11,7 +11,7 @@ ul {
 li.Post-item {
   padding: 5%;
   margin: 5%;
-  background-color: #1d3557;
+  background-color: #393b44;
   color: whitesmoke;
   overflow: hidden;
   border-radius: 10px;
@@ -43,7 +43,7 @@ ul.Post-buttons {
 }
 
 .Delete-button {
-  background-color: #e63946;
+  background-color: #ff4d4d;
   border: none;
   color: whitesmoke;
   font-size: 16px;
@@ -55,12 +55,12 @@ ul.Post-buttons {
 
 .Delete-button:hover {
   background-color: whitesmoke;
-  color: #e63946;
+  color: #ff4d4d;
 }
 
 .Update-button {
-  background-color: #a8dadc;
-  color: #1d3557;
+  background-color: #d6e0f0;
+  color: #393b44;
   border: none;
   font-size: 16px;
   padding: 5px 10px;
@@ -74,7 +74,7 @@ ul.Post-buttons {
 }
 
 .update-container {
-  background-color: #a8dadc;
+  background-color: #d6e0f0;
   padding: 2%;
   margin: 2%;
   border-radius: 10px;
@@ -85,12 +85,12 @@ ul.Post-buttons {
   padding: 25%;
   font-size: 28px;
   font-weight: bold;
-  color: #1d3557;
+  color: #393b44;
 }
 
 .Error {
   padding: 25%;
   font-size: 28px;
   font-weight: bold;
-  color: #e63946;
+  color: #ff4d4d;
 }

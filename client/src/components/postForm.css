@@ -1,5 +1,5 @@
 .form-container {
-  background-color: #1d3557;
+  background-color: #393b44;
   margin: 5%;
   padding: 5%;
   border-radius: 10px;
@@ -17,8 +17,8 @@ input[type=text], textarea {
 }
 
 input[type=submit] {
-  background-color: #a8dadc;
-  color: #1d3557;
+  background-color: #d6e0f0;
+  color: #393b44;
   border: none;
   font-size: 16px;
   padding: 5px 10px;
