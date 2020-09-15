@@ -30,7 +30,7 @@ class UpdateButton extends React.Component {
     return (
       <div className="update-container">
         <input
-        className="Update-button"
+          className="Update-button"
           name="update"
           value="Cancel Update"
           type="button"
