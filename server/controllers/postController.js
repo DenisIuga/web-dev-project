@@ -1,12 +1,7 @@
 var Post = require('../models/post');
 
-//Display post create form on GET
-exports.post_create_get = (req, res, next) => {
-  res.json({ title: "", content: "" });
-};
-
-//Handle post create on POST
-exports.post_create_post = (req, res, next) => {
+//Handle post create
+exports.post_create = (req, res, next) => {
   var date = new Date();
   var post = new Post({
     title: req.body.title,
@@ -48,21 +43,8 @@ exports.post_details = function(req, res, next) {
   });
 };
 
-//Display post edit form on GET
-exports.post_update_get = function(req, res, next) {
-  Post
-  .findById(req.params.id)
-  .select('title content time')
-  .exec(function(err, post) {
-    if(err) {
-      return next(err);
-    }
-    res.json(post);
-  });
-};
-
-//Handle post edit on POST
-exports.post_update_post = function(req, res, next) {
+//Handle post update
+exports.post_update = function(req, res, next) {
   var titleUpdate = req.body.title;
   var contentUpdate = req.body.content;
 
@@ -74,21 +56,8 @@ exports.post_update_post = function(req, res, next) {
   });
 };
 
-//Display post delete form on GET
-exports.post_delete_get = function(req, res, next) {
-  Post
-  .findById(req.params.id)
-  .select('title content time')
-  .exec(function(err, post) {
-    if(err) {
-      return next(err);
-    }
-    res.json(post);
-  });
-};
-
-//Handle post delete on POST
-exports.post_delete_post = function(req, res, next) {
+//Handle post delete
+exports.post_delete = function(req, res, next) {
   Post.findByIdAndDelete(req.params.id, function(err){
     if(err) {
       return next(err);

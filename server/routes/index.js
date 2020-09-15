@@ -8,17 +8,10 @@ router.get('/', function(req, res, next) {
 });
 
 //Posts routes
-router.get('/post/create', post_controller.post_create_get);
-router.post('/post/create', post_controller.post_create_post);
-
+router.post('/post/create', post_controller.post_create);
 router.get('/posts', post_controller.post_list);
-
 router.get('/post/:id', post_controller.post_details);
-
-router.get('/post/:id/update', post_controller.post_update_get);
-router.post('/post/:id/update', post_controller.post_update_post);
-
-router.get('/post/:id/delete', post_controller.post_delete_get);
-router.post('/post/:id/delete', post_controller.post_delete_post);
+router.post('/post/:id/update', post_controller.post_update);
+router.post('/post/:id/delete', post_controller.post_delete);
 
 module.exports = router;

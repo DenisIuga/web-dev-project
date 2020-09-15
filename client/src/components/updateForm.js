@@ -2,7 +2,7 @@ import React from 'react';
 
 class UpdateForm extends React.Component {
   constructor(props) {
-    super(props);
+    super();
     this.state = {
       id: "",
       title: "",
