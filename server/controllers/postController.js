@@ -48,7 +48,7 @@ exports.post_update = function(req, res, next) {
   var titleUpdate = req.body.title;
   var contentUpdate = req.body.content;
 
-  Post.findByIdAndUpdate(req.params.id, { title: titleUpdate, content: contentUpdate },function(err, post){
+  Post.findByIdAndUpdate(req.params.id, { title: titleUpdate, content: contentUpdate }, function(err, post){
     if(err) {
       return next(err);
     }
