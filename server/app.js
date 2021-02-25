@@ -13,7 +13,7 @@ var app = express();
 
 app.use(cors());
 
-var mongoDB = 'mongodb+srv://denis1234:2341mdb@cluster0.hpwdi.mongodb.net/rainy?retryWrites=true&w=majority';
+var mongoDB = "<mongodb link goes here>";
 mongoose.connect(mongoDB, {useNewUrlParser: true, useUnifiedTopology: true});
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error: '));
